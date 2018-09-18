@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+    web:
+        container_name: nginx01
+        build: ./nginx_default
+        ports:
+            - "80:80"
+            - "82:82"
+            - "8080:8080"
+        volumes:
+            - ./code/conf:/data/conf
+            - ./code/src:/data/src
+            - ./logs:/data/log
+        depends_on:
+            - php72
+
+    php72:
+        container_name: php7201
+        build: ./php_fpm_72
+        volumes:
+            - ./code/conf:/data/conf
+            - ./code/src:/data/src
+            - ./logs:/data/log

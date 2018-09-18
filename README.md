@@ -10,16 +10,16 @@ dev docker env
     ├── README.md
     ├── docker-compose.yml	
     ├── logs							日志目录
-    ├── nginx
+    ├── nginx_default
     │   ├── Dockerfile				nginx build
     │   └── nginx.conf
-    ├── php-fpm_7.2
+    ├── php_fpm_72
     │   ├── Dockerfile				php7.2 build
     │   └── php.ini
-    └── web
+    └── code                        存放代码的目录
         ├── conf					nginx各项目配置
-        ├── project					非php代码目录，例如，golang | python
-        └── src						git代码目录
+        ├── other_project			非php代码目录，例如，golang | python
+        └── php_project				php git代码目录
 
 
 ## 注意事项
